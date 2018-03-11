@@ -1,9 +1,20 @@
 public class Main {
 
+    private static int a = 0, b = 0;
+
     public static void main(String[] args) {
         int arr[] = {-12, 1, 4, 6, 3, 5, 2, 9, -2, -7};
+        for (int anArr : arr) {
+            System.out.print(" ," + anArr);
+        }
+        System.out.println("\n");
+
         findSubArr(arr);
 
+        System.out.println();
+        for(int x=a;x<=b;x++){
+            System.out.print(" ,"+arr[x]);
+        }
     }
 
     private static void findSubArr(int arr[]) {
@@ -39,7 +50,6 @@ public class Main {
         }
         System.out.println();
 
-        int a = 0, b = 0;
         int max = Integer.MIN_VALUE;
 
         for (int k = 0; k < n; k++) {
