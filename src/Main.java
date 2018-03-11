@@ -25,48 +25,29 @@ public class Main {
 
         int av = n / 2;
         int i = 0;
-        int sum = arr[av];
+        int sum = 0;
+        int sum_R=Integer.MIN_VALUE,sum_L=Integer.MIN_VALUE;
         i = av + 1;
 
         while (i < n) {
             sum += arr[i];
-            value[i] = sum;
+            if(sum>sum_R) {
+                sum_R = sum;
+               b=i;
+            }
             i++;
-
         }
 
-        sum = arr[av];
+        sum = 0;
         i = av - 1;
 
         while (i >= 0) {
             sum += arr[i];
-            value[i] = sum;
+            if(sum>sum_L) {
+                sum_L= sum;
+               a=i;
+            }
             i--;
-        }
-
-        for(int x =0;x<value.length;x++){
-
-            System.out.print(value[x]+",");
-        }
-        System.out.println();
-
-        int max = Integer.MIN_VALUE;
-
-        for (int k = 0; k < n; k++) {
-            if (value[k] > max) {
-                a = k;
-                max = value[k];
-            }
-        }
-
-        value[a] = Integer.MIN_VALUE / 2;
-
-        max = Integer.MIN_VALUE;
-        for (int k = av+1; k < n; k++) {
-            if (value[k] > max) {
-                b = k;
-                max = value[k];
-            }
         }
 
         System.out.println(a + " " + b);
